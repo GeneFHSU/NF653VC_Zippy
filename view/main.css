@@ -1,0 +1,44 @@
+body{
+    margin: 2px;
+}
+h1{
+    margin-bottom: 0.5rem;
+}
+table{
+    border: 2px solid black;
+    overflow-y: scroll;
+    border-collapse: separate;
+    border-spacing: 0px!important;
+    font-variant: normal;
+    text-align: left;
+}
+table td,th{
+
+    border-width: 1px;
+    border-style:dashed;
+    padding-right: 0.5rem;
+    padding-left:  0.5rem;
+}
+article{
+    max-width: 700px;
+    margin: 0 auto;
+}
+.button {
+    background-color: #546fbe;
+    border: none;
+    color: white;
+    padding: 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 1px 1px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.copyright{
+    text-align: right;
+}
+@media screen and (min-width: 1000px){
+    body { font-size: 1.5rem; }
+}
