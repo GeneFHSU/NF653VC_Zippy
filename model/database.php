@@ -2,16 +2,20 @@
     //$dsn = 'mysql:host=localhost;dbname=zippyusedautos';
     //$username = "root";//'mgs_user';
     //$password = "";//'pa55word';
-    $host       = getenv('JAW_HOST');
-    $dbname     = getenv('JAW_DB');
-    $dsn        = "mysql:host={$host};dbname={$dbname}";
-    $username   = getenv('JAW_USER');
-    $password   = getenv('JAW_PASS');
+    $url = getenv('JAWSDB_URL');
+    $dbparts = parse_url($url);
+
+    $hostname = $dbparts['host'];
+    $username = $dbparts['user'];
+    $password = $dbparts['pass'];
+    $database = ltrim($dbparts['path'],'/');
 
     $db = null;
 
     try {
-        $db = new PDO($dsn, $username, $password);
+        $db = new PDO("mysql:host=$hostname;dbname=$database", $username, $password);
+        // set the PDO error mode to exception
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
         $error_message = $e->getMessage();
         include('database_error.php');
