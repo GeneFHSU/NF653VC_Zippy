@@ -1,7 +1,8 @@
 <?php
-    $dsn = 'mysql:host=localhost;dbname=zippyusedautos';
-    $username = "root";//'mgs_user';
-    $password = "";//'pa55word';
+    //$dsn = 'mysql:host=localhost;dbname=zippyusedautos';
+    //$username = "root";//'mgs_user';
+    //$password = "";//'pa55word';
+    $dsn = getenv("JAWSDB_URL");
 
     $db = null;
 
